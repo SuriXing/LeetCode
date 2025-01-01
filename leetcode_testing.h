@@ -3,4 +3,6 @@
 
 #pragma mark -- all testing functions --
 
+int twoSumTesting();
+
 #endif	// __LEETCODE_TESTING_H__
