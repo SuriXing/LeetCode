@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>   // bool、true、false
 #include "leetcode_testing.h"
 
 /** 
@@ -33,10 +34,47 @@ int* twoSum(int nums[], int numsSize, int target, int* returnSize)
     return array;
 }
 
+/** 
+ * #9 -- Palindrome
+ * Given an integer x, return true if x is a palindrome, and false otherwise.
+ */
+bool isPalindrome(int x) 
+{
+    if (x < 0)
+    {
+        return false;
+    }
+
+    int array[32] = {0};
+    int count = 0;
+
+    while (x > 0)
+    {
+        array[count] = x % 10;
+        x = x / 10;
+        count++;
+    }
+
+    int front = 0;
+    int back = count - 1;
+
+    while (front < back)
+    {
+        if (array[front] != array[back])
+        {
+            return false;
+        }
+        front++;
+        back--;
+    }
+
+    return true;
+}
+
 int main()
 {
 	twoSumTesting();
+	isPalindromeTesting();
 
 	return 0;
 }
-
