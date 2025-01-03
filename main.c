@@ -71,6 +71,24 @@ bool isPalindrome(int x)
     return true;
 }
 
+bool isPalindrome_fast(int x) 
+{
+    if (x < 0)
+    {
+        return false;
+    }
+
+    int rev_x = 0;
+	int original_x = x;
+    while (x > 0)
+    {
+        rev_x = 10 * rev_x + (x % 10);
+        x = x / 10; 
+    }
+
+    return rev_x == original_x;
+}
+
 int main()
 {
 	twoSumTesting();
