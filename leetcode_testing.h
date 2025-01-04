@@ -7,5 +7,6 @@
 
 bool twoSumTesting();
 bool isPalindromeTesting();
+bool mySqrtTesting();
 
 #endif	// __LEETCODE_TESTING_H__

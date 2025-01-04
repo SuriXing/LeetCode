@@ -89,10 +89,35 @@ bool isPalindrome_fast(int x)
     return rev_x == original_x;
 }
 
+int mySqrt(int x) 
+{
+    int sqr = 1;
+
+    if (x <= 0)
+    {
+        return 0;
+    }
+
+    while ((1.0 * sqr * sqr) < x*1.0)
+    {
+        sqr++;
+    }
+
+    if ((1.0 * sqr * sqr) == x*1.0)
+    {
+        return sqr;
+    }
+    else
+    {
+        return sqr - 1;
+    }
+}
+
 int main()
 {
 	twoSumTesting();
 	isPalindromeTesting();
+	mySqrtTesting();
 
 	return 0;
 }
