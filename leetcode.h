@@ -7,5 +7,6 @@ int* twoSum(int nums[], int numsSize, int target, int* returnSize);
 bool isPalindrome(int x);
 bool isPalindrome_fast(int x);
 int mySqrt(int x);
+int removeElement(int* nums, int numsSize, int val);
 
 #endif // __LEETCODE_H__

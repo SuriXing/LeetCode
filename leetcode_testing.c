@@ -47,3 +47,8 @@ bool mySqrtTesting()
 {
     return 0;
 }
+
+bool removeElementTesting()
+{
+    return 0;
+}

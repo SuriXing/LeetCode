@@ -113,6 +113,43 @@ int mySqrt(int x)
     }
 }
 
+/** 
+ * #27 -- Remove Element
+ * Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. 
+ * The order of the elements may be changed. 
+ * Then return the number of elements in nums which are not equal to val.
+ */
+int removeElement(int* nums, int numsSize, int val) 
+{
+    if (NULL == nums || numsSize <= 0)
+        return 0;
+        
+    int newNums[numsSize];
+    int count = 0;
+    int indexOfNewNums = 0;
+
+    for (int i = 0; i < numsSize; i++)
+    {
+        if (nums[i] == val)
+        {
+            count += 1;
+        }
+
+        if (nums[i] != val)
+        {
+            newNums[indexOfNewNums] = nums[i];
+            indexOfNewNums += 1;
+        }
+    }
+
+    for (int i = 0; i < indexOfNewNums; i++)
+    {
+        nums[i] = newNums[i];
+    }
+
+    return (numsSize - count);
+}
+
 int main()
 {
 	twoSumTesting();
