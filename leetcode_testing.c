@@ -59,11 +59,20 @@ bool mySqrtTesting()
 
 bool removeElementTesting()
 {
-    int array[5] = {1,2,3,2,1};
+    int array1[5] = {1,2,3,2,1};
+    int array2[5] = {1,2,3,2,1};
+    int newLen1 = 0;
+    int newLen2 = 0;
 
-	printArray(array, 5);
-	removeElement(array, 5, 2);
-	printArray(array, 5);
+	printArray(array1, 5);
+	newLen1 = removeElement(array1, 5, 2);
+	printArray(array1, 5); 
+
+	printArray(array2, 5);
+	newLen2 = removeElementFast(array2, 5, 2);
+	printArray(array2, 5); 
+    
+    assert(newLen1 == newLen2);
 
     return 0;
 }

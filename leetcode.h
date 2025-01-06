@@ -8,5 +8,6 @@ bool isPalindrome(int x);
 bool isPalindromeFast(int x);
 int mySqrt(int x);
 int removeElement(int* nums, int numsSize, int val);
+int removeElementFast(int* nums, int numsSize, int val);
 
 #endif // __LEETCODE_H__
