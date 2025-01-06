@@ -5,7 +5,7 @@
 
 int* twoSum(int nums[], int numsSize, int target, int* returnSize);
 bool isPalindrome(int x);
-bool isPalindrome_fast(int x);
+bool isPalindromeFast(int x);
 int mySqrt(int x);
 int removeElement(int* nums, int numsSize, int val);
 

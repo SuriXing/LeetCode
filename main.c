@@ -71,7 +71,7 @@ bool isPalindrome(int x)
     return true;
 }
 
-bool isPalindrome_fast(int x) 
+bool isPalindromeFast(int x) 
 {
     if (x < 0)
     {
@@ -134,8 +134,7 @@ int removeElement(int* nums, int numsSize, int val)
         {
             count += 1;
         }
-
-        if (nums[i] != val)
+		else
         {
             newNums[indexOfNewNums] = nums[i];
             indexOfNewNums += 1;
@@ -150,11 +149,37 @@ int removeElement(int* nums, int numsSize, int val)
     return (numsSize - count);
 }
 
+int removeElementFast(int* nums, int numsSize, int val) 
+{
+    if (NULL == nums || numsSize <= 0)
+        return 0;
+            
+    int count = 0;
+	int indexOfNewNums = 0;
+ 
+    for (int i = 0; i < numsSize; i++)
+    { 
+        if (nums[i] == val)
+        {   
+            count += 1;
+        }   
+        else
+        {   
+            nums[indexOfNewNums] = nums[i];
+            indexOfNewNums += 1;
+        }
+
+    }   
+
+    return (numsSize - count);
+}
+
 int main()
 {
 	twoSumTesting();
 	isPalindromeTesting();
 	mySqrtTesting();
+	removeElementTesting();
 
 	return 0;
 }
