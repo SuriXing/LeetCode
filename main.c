@@ -174,12 +174,60 @@ int removeElementFast(int* nums, int numsSize, int val)
     return (numsSize - count);
 }
 
+static int isElementInArray(int* nums, int numsSize, int element)
+{
+    for (int i = 0; i < numsSize; i++)
+    {
+        if (nums[i] == element)
+        {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+/** 
+ * #26 -- Remove Duplicated from Sorted Array
+ * Given an integer array nums sorted in non-decreasing order, 
+ * remove the duplicates in-place such that each unique element appears only once. 
+ * The relative order of the elements should be kept the same. 
+ * Then return the number of unique elements in nums.
+ */
+int removeDuplicates(int* nums, int numsSize)
+{
+    if ((NULL == nums) || (numsSize <= 0))
+    {
+        return 0;
+    }
+
+    int array[numsSize];
+    int newArrayLen = 0;
+
+    for (int i = 0; i < numsSize; i++)
+    {
+        if (isElementInArray(array, newArrayLen, nums[i]) == 0)
+        {
+            array[newArrayLen] = nums[i];
+            newArrayLen += 1;
+        }
+    }
+
+    for (int i = 0; i < newArrayLen; i++)
+    {
+        nums[i] = array[i];
+    }
+
+    return newArrayLen;
+}
+
 int main()
 {
 	twoSumTesting();
 	isPalindromeTesting();
 	mySqrtTesting();
 	removeElementTesting();
+	removeDuplicatesTesting();
 
 	return 0;
 }

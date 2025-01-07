@@ -9,5 +9,6 @@ bool twoSumTesting();
 bool isPalindromeTesting();
 bool mySqrtTesting();
 bool removeElementTesting();
+bool removeDuplicatesTesting();
 
 #endif	// __LEETCODE_TESTING_H__

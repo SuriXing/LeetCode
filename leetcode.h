@@ -9,5 +9,6 @@ bool isPalindromeFast(int x);
 int mySqrt(int x);
 int removeElement(int* nums, int numsSize, int val);
 int removeElementFast(int* nums, int numsSize, int val);
+int removeDuplicates(int* nums, int numsSize);
 
 #endif // __LEETCODE_H__

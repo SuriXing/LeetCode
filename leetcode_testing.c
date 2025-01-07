@@ -76,3 +76,8 @@ bool removeElementTesting()
 
     return 0;
 }
+
+bool removeDuplicatesTesting()
+{
+    return 0;
+}
