@@ -221,6 +221,38 @@ int removeDuplicates(int* nums, int numsSize)
     return newArrayLen;
 }
 
+static int doBubbleSort(int array[], int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        for (int j = i+1; j < length; j++)
+        {
+            if (array[i] > array[j])
+            {
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+
+    return 0;
+}
+
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
+{
+    if ((NULL == nums1) || (NULL == nums2) || (nums1Size < 0) || (nums2Size < 0) || (m < 0) || (n < 0) || (m > nums1Size) || (n > nums2Size))
+    {
+        return;
+    }
+ 
+    for (int i = 0; i < n; i++)
+    {
+        nums1[m+i] = nums2[i];
+    }
+    doBubbleSort(nums1, m+n);
+}
+
 int main()
 {
 	twoSumTesting();

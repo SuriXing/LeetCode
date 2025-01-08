@@ -81,3 +81,8 @@ bool removeDuplicatesTesting()
 {
     return 0;
 }
+
+bool mergeTesting()
+{
+    return 0;
+}
