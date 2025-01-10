@@ -8,7 +8,7 @@ CFLAGS = -Wall -g3 -ggdb
 TARGET = a.out
 
 # List of source files
-SRCS = main.c leetcode_testing.c
+SRCS = main.c leetcode_testing.c leetcode.c
 
 # Automatically derive the list of object files (replace.c suffix of source files with.o suffix)
 OBJS = $(SRCS:.c=.o)
