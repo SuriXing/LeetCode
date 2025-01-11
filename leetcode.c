@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>   // bool、true、false
+#include <string.h>
 #include "leetcode_testing.h"
 
 /** 
@@ -251,4 +252,43 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
         nums1[m+i] = nums2[i];
     }
     doBubbleSort(nums1, m+n);
+}
+
+char* longestCommonPrefix(char* strs[], int strsSize)
+{
+    if (NULL == strs || strsSize <= 0)
+    {
+        return "";
+    }
+
+    char* commonStr = (char*)malloc(200*sizeof(char));
+    char* currCommonStr = commonStr;
+
+    int length = strlen(strs[0]);
+
+    for (int i = 0; i < length; i++)
+    {
+        int j = 1;
+        char currChar = strs[0][1];
+        for (j = 1; j < strsSize; j++)
+        {
+            if ((strs[j][i] == '\0') || (strs[j][i] != currChar))
+            {
+                break;
+            }
+        }    
+
+        if (j == strsSize)
+        {
+            *currCommonStr = currChar;
+            currCommonStr++;
+        }
+        else
+        {
+            break;
+        }
+    }
+    
+    *currCommonStr = '\0';
+    return commonStr;
 }
