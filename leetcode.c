@@ -292,3 +292,43 @@ char* longestCommonPrefix(char* strs[], int strsSize)
     *currCommonStr = '\0';
     return commonStr;
 }
+
+char* longestCommonPrefix2(char* strs[], int strsSize)
+{
+    if ((NULL == strs) || (strsSize <= 0))
+    {
+        return "";
+    }
+
+    char* commonStr = (char*)malloc(200*sizeof(char));
+    char* currCommonStr = commonStr;
+
+    int length = strlen(strs[0]);
+
+    for (int i = 0; i < length; i++)
+    {
+        int j = 1;
+        char currChar = strs[0][1];
+
+        for (; j < strsSize; j++)
+        {
+            if ((strs[j][i] == '\0') || (strs[j][i] != currChar))
+            {
+                break;
+            }
+        }
+
+        if ( j == strsSize)
+        {
+            *currCommonStr = currChar;
+            currCommonStr++;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    *currCommonStr = '\0';
+    return commonStr;
+}
