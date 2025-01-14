@@ -11,5 +11,6 @@ bool mySqrtTesting();
 bool removeElementTesting();
 bool removeDuplicatesTesting();
 bool mergeTesting();
+bool longestCommonPrefixTesting();
 
 #endif	// __LEETCODE_TESTING_H__

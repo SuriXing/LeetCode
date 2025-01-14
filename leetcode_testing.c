@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 #include "leetcode.h"
 #include "leetcode_testing.h"
 
@@ -123,4 +124,19 @@ bool removeDuplicatesTesting()
 bool mergeTesting()
 {
     return 0;
+}
+
+bool longestCommonPrefixTesting()
+{
+	char* strs[3] = {"flower","flow","flight"};
+
+	assert(strcmp(longestCommonPrefix(strs, 3), longestCommonPrefix2(strs, 3)) == 0);
+    assert(strcmp(longestCommonPrefix(strs, 3), "fl") == 0);
+
+	char* strs2[5] = {"dog","dacecar", "dar", "beetle", "dob"};
+
+    assert(strcmp(longestCommonPrefix(strs2, 5), longestCommonPrefix2(strs2, 5)) == 0);
+    assert(strcmp(longestCommonPrefix(strs2, 5), "") == 0);
+
+    return true;
 }

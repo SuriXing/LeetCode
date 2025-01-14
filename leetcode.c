@@ -269,7 +269,7 @@ char* longestCommonPrefix(char* strs[], int strsSize)
     for (int i = 0; i < length; i++)
     {
         int j = 1;
-        char currChar = strs[0][1];
+        char currChar = strs[0][i];
         for (j = 1; j < strsSize; j++)
         {
             if ((strs[j][i] == '\0') || (strs[j][i] != currChar))
@@ -308,7 +308,7 @@ char* longestCommonPrefix2(char* strs[], int strsSize)
     for (int i = 0; i < length; i++)
     {
         int j = 1;
-        char currChar = strs[0][1];
+        char currChar = strs[0][i];
 
         for (; j < strsSize; j++)
         {

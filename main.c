@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "leetcode.h"
 #include "leetcode_testing.h"
 
 int main()
@@ -8,6 +9,7 @@ int main()
 	mySqrtTesting();
 	removeElementTesting();
 	removeDuplicatesTesting();
+	longestCommonPrefixTesting();
 
 	return 0;
 }

@@ -12,5 +12,6 @@ int removeElementFast(int* nums, int numsSize, int val);
 int removeDuplicates(int* nums, int numsSize);
 void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n);
 char* longestCommonPrefix(char* strs[], int strsSize);
+char* longestCommonPrefix2(char* strs[], int strsSize);
 
 #endif // __LEETCODE_H__
