@@ -138,5 +138,25 @@ bool longestCommonPrefixTesting()
     assert(strcmp(longestCommonPrefix(strs2, 5), longestCommonPrefix2(strs2, 5)) == 0);
     assert(strcmp(longestCommonPrefix(strs2, 5), "") == 0);
 
+    char* strs3[4] = {"fish", "fishing", "freeze", "flash"};
+
+    assert(strcmp(longestCommonPrefix(strs3, 4), longestCommonPrefix2(strs3, 4)) == 0);
+    assert(strcmp(longestCommonPrefix(strs3, 4), "f") == 0);
+
+    char* strs4[3] = {"cheese", "catch", "code"};
+
+    assert(strcmp(longestCommonPrefix(strs4, 3), longestCommonPrefix2(strs4, 3)) == 0);
+    assert(strcmp(longestCommonPrefix(strs4, 3), "c") == 0);
+
+    char* strs5[5] = {"apple", "banana", "cat", "dog", "egg"};
+
+    assert(strcmp(longestCommonPrefix(strs5, 5), longestCommonPrefix2(strs5, 5)) == 0);
+    assert(strcmp(longestCommonPrefix(strs5, 5), "") == 0);
+
+    char* strs6[3] = {"cat", "cats", "catss"};
+
+    assert(strcmp(longestCommonPrefix(strs6, 3), longestCommonPrefix2(strs6, 3)) == 0);
+    assert(strcmp(longestCommonPrefix(strs6, 3), "cat") == 0);
+
     return true;
 }
