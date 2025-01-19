@@ -114,6 +114,59 @@ int mySqrt(int x)
     }
 }
 
+
+
+int mySqrtFast(int x) 
+{
+    if (x <= 0)
+    {
+        return 0;
+    }
+	else if (x == 1)
+	{
+		return 1;
+	}
+	const unsigned int kUpLimit = sizeof(int) == 8 ? 65536*65536 : sizeof(int) == 4 ? 256*256 : 256;
+
+    const unsigned int ux = (const unsigned int)x;
+    unsigned int start = 0;
+	unsigned int end = ux > kUpLimit ? kUpLimit : ux/2;
+	unsigned int mid = (start+end)/2;
+
+	while (start < end-1)
+	{
+		if (mid * mid < ux)
+		{
+			start=mid;
+		}
+		else if (mid * mid > ux)
+		{
+			end=mid;
+		}
+		else
+		{
+			start = end = mid;
+			break;
+		}
+		mid = (start+end)/2;
+	}
+
+    while ((start*start) < ux)
+    {
+        start++;
+    }
+
+    if ((start*start) == ux)
+    {
+        return start;
+    }
+    else
+    {
+        return start - 1;
+    }
+}
+
+
 /** 
  * #27 -- Remove Element
  * Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. 
